@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nave{
+    max-width: 900px;
+    margin:auto;
+    background-color: #333;
+    font-size: 20px;
+    margin-top: 50px;
+    position: relative; /* Crucial: Establishes a stacking context for its children (like the dropdowns) */
+    z-index: 100; /* Crucial: Ensures the entire navigation bar is above other page content. Use a high value. */
+}
+
+.menu_horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu_horizontal > li {
+    position: relative; /* Crucial: This anchors the absolutely positioned dropdown to its parent list item. */
+}
+
+.menu_horizontal > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu_horizontal > li:hover{
+    background-color: #2c8aaf;
+}
+
+.menu_vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+    /* No need for z-index here if its parent (.menu_horizontal > li) has relative positioning and the .nave has a high z-index,
+       but you can add it if you want it to be even higher than other elements within the nav.
+       For instance: z-index: 101; */
+}
+
+.menu_horizontal li:hover .menu_vertical{
+    display: block;
+}
+
+.menu_vertical li:hover{
+    background-color: black;
+}
+
+.menu_vertical li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
