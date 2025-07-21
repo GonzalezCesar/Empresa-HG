@@ -143,8 +143,8 @@
                                             <th><?php  echo $row['ID_usuario']?></th>
                                             <th><?php  echo $row['ID_contrato']?></th>
                                             <th><?php  echo $row['Fecha_de_contratacion']?></th>
-                                            <th><a href="actualizar.php?id=<?php echo$row['ID_contratado"'] ?>" class="btnbtn-info">Editar</a></th>
-                                            <th><a href="delete.php?id=<?php echo $ro['ID_contratado"'] ?>" class="btn btn-danger">Eliminar</a><th>                                        
+                                            <th><a href="actualizar.php?id=<?php echo $row['ID_contratado'] ?>" class="btnbtn-info">Editar</a></th>
+                                            <th><a href="delete.php?id=<?php echo $row['ID_contratado'] ?>" class="btn btn-danger">Eliminar</a><th>                                        
                                         </tr>
                                     <?php 
                                             }
