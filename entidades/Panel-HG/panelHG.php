@@ -72,7 +72,7 @@
 
         <div class="dashboard-section">
             <div class="tabs-navigation">   
-                <button class="tab-trigger active" onclick="window.location.href='../empresa/empresa.php'">Empresa</button>
+                <button class="tab-trigger active" onclick="window.location.href='../empresaHG/empresa.php'">Empresa</button>
                 <button class="tab-trigger" onclick="window.location.href='../nomina/nomina.php'">Nómina</button>
                 <button class="tab-trigger" onclick="window.location.href='../banco/banco.php'">Banco</button>
                 <button class="tab-trigger" onclick="window.location.href='../postulacion/postulacion.php'">Postulaciones</button>
