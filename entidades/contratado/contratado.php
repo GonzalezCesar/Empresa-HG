@@ -97,23 +97,23 @@
                 <p class="section-subtitle">Administra todo el personal contratado</p>
 
                 <div class="form-card">
-                    <h3 class="form-title">Hacer inputs de la tabla CONTRATADO/EMPLEADO para su registro</h3>
+                    <h3 class="form-title">Registro de personal contratado</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="contracted-input1">Input:</label>
-                            <input type="text" id="contracted-input1">
+                            <label for="IDContratado">ID contratado:</label>
+                            <input type="number" id="IDContratado">
                         </div>
                         <div class="form-group">
-                            <label for="contracted-input2">Input:</label>
-                            <input type="text" id="contracted-input2">
+                            <label for="IDUsuario">ID usuario:</label>
+                            <input type="number" id="IDUsuario">
                         </div>
                         <div class="form-group">
-                            <label for="contracted-input3">Input:</label>
-                            <input type="text" id="contracted-input3">
+                            <label for="IDContrato">ID contrado:</label>
+                            <input type="number" id="IDContratp">
                         </div>
                         <div class="form-group">
-                            <label for="contracted-input4">Input:</label>
-                            <input type="text" id="contracted-input4">
+                            <label for="FechaC">Fecha de contratación:</label>
+                            <input type="date" id="FechaC">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -121,23 +121,16 @@
                     </div>
                 </div>
 
-                <p class="table-info">Cambiarle los atributos a las tablas en pro de los registros</p>
-
                 <h3 class="section-title-small">Listado General de Empresas</h3>
                 <p class="section-subtitle-small">Información general de las empresas registradas</p>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Empresa</th>
-                                <th>RIF</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Sector</th>
-                                <th>Fecha Registro</th>
-                                <th>Status</th>
-                                <th>ID Sector</th>
+                                <th>ID contratado</th>
+                                <th>ID_usuario</th>
+                                <th>ID_contrato</th>
+                                <th>Fecha_de_contratacion</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>

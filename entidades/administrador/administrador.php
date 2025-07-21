@@ -95,25 +95,47 @@
                     <form action="insertar.php" method="POST">
                         <div class="form-grid">
                             <div class="form-group">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre" required>
+                                <label for="ID Admin">ID del admin:</label>
+                                <input type="text" id="ID Admin" name="ID Admin" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
+                                <label for="ID Usuario">ID del admin:</label>
+                                <input type="text" id="ID Usuario" name="ID Usuario" required>
                             </div>
                             <div class="form-group">
-                                <label for="password">Contraseña:</label>
-                                <input type="password" id="password" name="password" required>
+                                <label for="CIAdmin">Cédula de identidad:</label>
+                                <input type="text" id="CIAdmin" name="CIAdmin" required>
                             </div>
                             <div class="form-group">
+                                <label for="Nombre">Nombre:</label>
+                                <input type="text" id="Nombre" name="Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Apellido">Apellido:</label>
+                                <input type="text" id="Apellido" name="Apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Tlfno">Teléfono:</label>
+                                <input type="text" id="Tlfno" name="Tlfno" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="CodEspecial">Código especial:</label>
+                                <input type="text" id="CodEspecial" name="CodEspecial" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="TFadmin">Confirma la creación?</label>
+                                <input type="checkbox" id="TFadmin" name="TFadmin"  value="1" required>
+                            </div>
+                        </div>
+                            
+                            <!-- <div class="form-group">
                                 <label for="rol">Rol:</label>
                                 <select id="rol" name="rol" required>
                                     <option value="admin">Administrador</option>
                                     <option value="superadmin">Super Administrador</option>
                                 </select>
-                            </div>
-                        </div>
+                            </div> -->
+                </div>
                         <div class="form-actions">
                             <button type="submit" class="register-button">Registrar</button>
                         </div>
@@ -125,12 +147,14 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>ID admin</th>
+                                <th>ID usuario</th>
+                                <th>Cédula admin</th>
                                 <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Rol</th>
-                                <th>Estado</th>
-                                <th>Último Acceso</th>
+                                <th>Apellido</th>
+                                <th>Teléfono</th>
+                                <th>Código especial</th>
+                                <th>Creación del usuario</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
