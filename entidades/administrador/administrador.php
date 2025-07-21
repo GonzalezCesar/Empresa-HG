@@ -96,11 +96,11 @@
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="ID Admin">ID del admin:</label>
-                                <input type="text" id="ID Admin" name="ID Admin" required>
+                                <input type="number" id="ID Admin" name="ID Admin" required>
                             </div>
                             <div class="form-group">
                                 <label for="ID Usuario">ID del admin:</label>
-                                <input type="text" id="ID Usuario" name="ID Usuario" required>
+                                <input type="number" id="ID Usuario" name="ID Usuario" required>
                             </div>
                             <div class="form-group">
                                 <label for="CIAdmin">Cédula de identidad:</label>

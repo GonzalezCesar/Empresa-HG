@@ -95,23 +95,55 @@
                 <p class="section-subtitle">Supervisa todos los postulantes del sistema</p>
 
                 <div class="form-card">
-                    <h3 class="form-title">Hacer inputs de la tabla POSTULANTES para su registro</h3>
+                    <h3 class="form-title">Registro de postulantes</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="post-input1">Input:</label>
-                            <input type="text" id="post-input1">
+                            <label for="IDPostulante">ID Postulante:</label>
+                            <input type="number" id="IDPostulante">
+                        </div>
+                                <div class="form-group">
+                            <label for="IDUsuario">ID Usuario:</label>
+                            <input type="number" id="IDUsuario">
                         </div>
                         <div class="form-group">
-                            <label for="post-input2">Input:</label>
-                            <input type="text" id="post-input2">
+                            <label for="CIp">Cédula de identidad:</label>
+                            <input type="text" id="CIp">
                         </div>
                         <div class="form-group">
-                            <label for="post-input3">Input:</label>
-                            <input type="text" id="post-input3">
+                            <label for="Nombrep">Nombre:</label>
+                            <input type="text" id="Nombrep">
                         </div>
                         <div class="form-group">
-                            <label for="post-input4">Input:</label>
-                            <input type="text" id="post-input4">
+                            <label for="Apellidop">Apellido:</label>
+                            <input type="text" id="Apellidop">
+                        </div>
+                        <div class="form-group">
+                            <label for="Nacimientop">Fecha de nacimiento:</label>
+                            <input type="date" id="Nacimientop">
+                        </div>
+                        <div class="form-group">
+                            <label for="Tfnop">Teléfono:</label>
+                            <input type="text" id="Tfnop">
+                        </div>
+                        <div class="form-group">
+                            <label for="Direccp">Dirección:</label>
+                            <input type="text" id="Direccp">
+                        </div>
+                        <div class="form-group">
+                            <label for="Sangrep">Tipo de sangre:</label>
+                            <input type="text" id="Sangrep">
+                        </div>
+                        <div class="form-group">
+                            <label for="Emergencyp">Contacto de emergencia:</label>
+                            <input type="text" id="Emergencyp">
+                        </div>
+                        <div class="form-group">
+                            <label for="EmergencyTfnop">Teléfono de emergencia:</label>
+                            <input type="text" id="EmergencyTfnop">
+                        </div>
+                        <div class="form-group">
+                            <label for="Fechap">Fecha de registro:</label>
+                            <input type="date" id="Sangrep">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -127,13 +159,18 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Candidato</th>
-                                <th>Email</th>
-                                <th>Oferta</th>
-                                <th>Empresa</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
+                                <th>ID Postulante</th>
+                                <th>ID Usuario</th>
+                                <th>Cedula</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Fecha de nacimiento</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Tipo de sangre</th>
+                                <th>Contacto de emergencia</th>
+                                <th>Teléfono de emergencia</th>
+                                <th>Fecha registro</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>

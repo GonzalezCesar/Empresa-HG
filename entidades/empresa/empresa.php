@@ -95,23 +95,43 @@
                 <p class="section-subtitle">Administra todas las empresas clientes</p>
 
                 <div class="form-card">
-                    <h3 class="form-title">Hacer inputs de la tabla EMPRESA para su registro</h3>
+                    <h3 class="form-title">Registros de Empresas</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="emp-input1">Input:</label>
-                            <input type="text" id="emp-input1">
+                            <label for="IDEmpresa">ID Empresa:</label>
+                            <input type="number" id="IDEmpresa">
                         </div>
                         <div class="form-group">
-                            <label for="emp-input2">Input:</label>
-                            <input type="text" id="emp-input2">
+                            <label for="NombreE">Nombre de la empresa:</label>
+                            <input type="text" id="RIF">
                         </div>
                         <div class="form-group">
-                            <label for="emp-input3">Input:</label>
-                            <input type="text" id="emp-input3">
+                            <label for="RIF">RIF de la empresa:</label>
+                            <input type="text" id="RIF">
                         </div>
                         <div class="form-group">
-                            <label for="emp-input4">Input:</label>
-                            <input type="text" id="emp-input4">
+                            <label for="DireccE">Dirección:</label>
+                            <input type="text" id="DireccE">
+                        </div>
+                        <div class="form-group">
+                            <label for="TlfnoE">Teléfono:</label>
+                            <input type="text" id="TlfnoE">
+                        </div>
+                        <div class="form-group">
+                            <label for="SectorE">Sector:</label>
+                            <input type="text" id="TlfnoE">
+                        </div>
+                        <div class="form-group">
+                            <label for="FechaRE">Fecha de registro:</label>
+                            <input type="date" id="FechaRE">
+                        </div>
+                        <div class="form-group">
+                            <label for="statusE">Confirma la creación?</label>
+                            <input type="checkbox" id="statusE" name="statusE"  value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="IDSector">ID Sector:</label>
+                            <input type="number" id="IDSector">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -127,8 +147,8 @@
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Empresa</th>
+                                <th>ID Empresa</th>
+                                <th>Nombre de Empresa</th>
                                 <th>RIF</th>
                                 <th>Dirección</th>
                                 <th>Teléfono</th>
