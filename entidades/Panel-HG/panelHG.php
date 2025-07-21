@@ -78,7 +78,6 @@
                 <button class="tab-trigger" onclick="window.location.href='../postulacion/postulacion.php'">Postulaciones</button>
                 <button class="tab-trigger" onclick="window.location.href='../oferta_laboral/ofert_laboral.php'">Ofertas</button>
                 <button class="tab-trigger" onclick="window.location.href='../postulante/postulante.php'">Candidatos</button>
-                <button class="tab-trigger" onclick="window.location.href='../'">Contratado</button>
             </div>
 
             <div id="administrador" class="tab-content active">

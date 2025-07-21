@@ -2,10 +2,18 @@
     include("conexion.php");
     $con=conectar();
 
-    $sql="SELECT *  FROM administrador";
+    // Consulta modificada para obtener los datos necesarios con JOINs según la estructura de empresa_hg
+    $sql="SELECT p.ID_postulacion, p.Fecha_postulacion, p.Estado_postulacion,
+                 of.titulo_oferta_laboral AS cargo, 
+                 emp.Nombre_empresa AS empresa,
+                 post.Nombre_postulante AS nombre_postulante,
+                 post.Apellido_postulante AS apellido_postulante
+          FROM postulacion p
+          JOIN oferta_laboral of ON p.ID_oferta = of.ID_oferta_laboral
+          JOIN empresa emp ON of.ID_empresa = emp.ID_empresa
+          JOIN postulante post ON p.ID_postulante = post.ID_postulante
+          ORDER BY p.Fecha_postulacion DESC";
     $query=mysqli_query($con,$sql);
-
-   
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +25,43 @@
     <link rel="stylesheet" href="postulaciones.css">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .postulation-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .postulation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .postulation-title {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .postulation-detail {
+            margin: 5px 0;
+            color: #555;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .status-pendiente { background-color: #f39c12; color: white; }
+        .status-revisado { background-color: #3498db; color: white; }
+        .status-entrevista { background-color: #9b59b6; color: white; }
+        .status-contratado { background-color: #2ecc71; color: white; }
+        .status-rechasado { background-color: #e74c3c; color: white; }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -82,7 +127,7 @@
 
         <div class="dashboard-section">
             <div class="tabs-navigation">   
-                <button class="tab-trigger" onclick="window.location.href='../empresa/empresa.php'">Empresa</button>
+                <button class="tab-trigger" onclick="window.location.href='../Panel-HG/panelHG.php'">Empresa</button>
                 <button class="tab-trigger" onclick="window.location.href='../nomina/nomina.php'">Nómina</button>
                 <button class="tab-trigger" onclick="window.location.href='../banco/banco.php'">Banco</button>
                 <button class="tab-trigger active" onclick="window.location.href='../postulacion/postulacion.php'">Postulaciones</button>
@@ -92,19 +137,37 @@
 
             <!-- Contenido de la pestaña Postulaciones -->
             <div id="postulaciones" class="tab-content active">
-                <div class="postulation-card">
-                    <h3 class="postulation-title">Nombre de la Postulación</h3>
-                    <p class="postulation-detail">Cargo</p>
-                    <p class="postulation-detail">Nombre de la empresa</p>
-                    <p class="postulation-detail">Fecha de la postulación</p>
-                </div>
-                <div class="postulation-card">
-                    <h3 class="postulation-title">Nombre de la Postulación</h3>
-                    <p class="postulation-detail">Cargo</p>
-                    <p class="postulation-detail">Nombre de la empresa</p>
-                    <p class="postulation-detail">Fecha de la postulación</p>
-                </div>
-                <p class="table-info" style="margin-top: 2rem;">Formato para hacer listado desde la BD de la entidad POSTULACIONES</p>
+                <h2 style="margin-bottom: 20px;">Listado de Postulaciones</h2>
+                
+                <?php while($row = mysqli_fetch_array($query)): 
+                    // Limpiar el estado de las comillas simples adicionales
+                    $estado = str_replace("'", "", $row['Estado_postulacion']);
+                    // Determinar la clase CSS según el estado
+                    $estado_class = strtolower($estado);
+                ?>
+                    <div class="postulation-card">
+                        <h3 class="postulation-title">
+                            Postulación #<?php echo $row['ID_postulacion']; ?>
+                            <span class="status-badge status-<?php echo $estado_class; ?>">
+                                <?php echo $estado; ?>
+                            </span>
+                        </h3>
+                        <p class="postulation-detail"><strong>Candidato:</strong> <?php echo $row['nombre_postulante'] . ' ' . $row['apellido_postulante']; ?></p>
+                        <p class="postulation-detail"><strong>Cargo:</strong> <?php echo $row['cargo']; ?></p>
+                        <p class="postulation-detail"><strong>Empresa:</strong> <?php echo $row['empresa']; ?></p>
+                        <p class="postulation-detail"><strong>Fecha:</strong> <?php echo date('d/m/Y H:i', strtotime($row['Fecha_postulacion'])); ?></p>
+                        <div class="action-buttons" style="margin-top: 10px;">
+                            <a href="detalle_postulacion.php?id=<?php echo $row['ID_postulacion']; ?>" class="btn btn-sm btn-info">Ver Detalles</a>
+                            <a href="editar_postulacion.php?id=<?php echo $row['ID_postulacion']; ?>" class="btn btn-sm btn-warning">Editar</a>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+                
+                <?php if(mysqli_num_rows($query) == 0): ?>
+                    <div class="alert alert-info" style="margin-top: 20px;">
+                        No hay postulaciones registradas en este momento.
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Otras pestañas (ocultas en este archivo HTML específico) -->
@@ -134,5 +197,3 @@
     </script>
 </body>
 </html>
-
-
