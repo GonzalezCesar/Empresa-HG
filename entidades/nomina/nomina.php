@@ -97,23 +97,38 @@
                 <p class="section-subtitle">Administra de salarios del personal</p>
 
                 <div class="form-card">
-                    <h3 class="form-title">Hacer inputs de la tabla NÓMINA para su registro</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="payroll-input1">Input:</label>
-                            <input type="text" id="payroll-input1">
+                            <label for="IDNomina">ID Nómina:</label>
+                            <input type="number" id="IDNomina">
                         </div>
                         <div class="form-group">
-                            <label for="payroll-input2">Input:</label>
-                            <input type="text" id="payroll-input2">
+                            <label for="IDEmpresa">ID Empresa:</label>
+                            <input type="number" id="IDEmpresa">
                         </div>
                         <div class="form-group">
-                            <label for="payroll-input3">Input:</label>
-                            <input type="text" id="payroll-input3">
+                            <label for="IDuHG">ID Usuario HG:</label>
+                            <input type="number" id="IDuHG">
                         </div>
                         <div class="form-group">
-                            <label for="payroll-input4">Input:</label>
-                            <input type="text" id="payroll-input4">
+                            <label for="MesN">Mes de la nómina:</label>
+                            <input type="number" id="MesN">
+                        </div>
+                        <div class="form-group">
+                            <label for="YearN">Año de la nómina:</label>
+                            <input type="number" id="YearN">
+                        </div>
+                        <div class="form-group">
+                            <label for="FechaN">Fecha de creación de nómina:</label>
+                            <input type="date" id="FechaN">
+                        </div>
+                        <div class="form-group">
+                            <label for="MontoN">Total nómina:</label>
+                            <input type="number" step="0.01" min="0" id="MontoN">
+                        </div>
+                        <div class="form-group">
+                            <label for="StatusN">Estado de nómina:</label>
+                            <input type="Text" id="StatusN">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -121,23 +136,20 @@
                     </div>
                 </div>
 
-                <p class="table-info">Cambiarle los atributos a las tablas en pro de los registros/Cambiar las letras negras BOLD por algo acorde</p>
-
                 <h3 class="section-title-small">Listado General de Empresas</h3>
                 <p class="section-subtitle-small">Información general de las empresas registradas</p>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Empresa</th>
-                                <th>RIF</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Sector</th>
-                                <th>Fecha Registro</th>
-                                <th>Status</th>
-                                <th>ID Sector</th>
+                                <th>ID Nómina</th>
+                                <th>ID Empresa</th>
+                                <th>ID Usuario HG</th>
+                                <th>Mes nómina</th>
+                                <th>Año Nómina</th>
+                                <th>Fecha de creación</th>
+                                <th>Total Nómina</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>

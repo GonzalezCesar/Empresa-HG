@@ -97,23 +97,19 @@
                 <p class="section-subtitle">Administración de aliados financieros</p>
 
                 <div class="form-card">
-                    <h3 class="form-title">Hacer inputs de la tabla BANCO para su registro</h3>
+                    <h3 class="form-title">Registro de Bancos</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="bank-input1">Input:</label>
-                            <input type="text" id="bank-input1">
+                            <label for="IDBanco">ID Banco:</label>
+                            <input type="number" id="IDBanco">
                         </div>
                         <div class="form-group">
-                            <label for="bank-input2">Input:</label>
-                            <input type="text" id="bank-input2">
+                            <label for="NombreB">Nombre del Banco:</label>
+                            <input type="text" id="NombreB">
                         </div>
                         <div class="form-group">
-                            <label for="bank-input3">Input:</label>
-                            <input type="text" id="bank-input3">
-                        </div>
-                        <div class="form-group">
-                            <label for="bank-input4">Input:</label>
-                            <input type="text" id="bank-input4">
+                            <label for="DescripB">Descripción:</label>
+                            <input type="text" id="DescripB">
                         </div>
                     </div>
                     <div class="form-actions">
@@ -121,23 +117,15 @@
                     </div>
                 </div>
 
-                <p class="table-info">Cambiarle los atributos a las tablas en pro de los registros/Cambiar las letras negras BOLD por algo acorde</p>
-
                 <h3 class="section-title-small">Listado General de Empresas</h3>
                 <p class="section-subtitle-small">Información general de las empresas registradas</p>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Empresa</th>
-                                <th>RIF</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Sector</th>
-                                <th>Fecha Registro</th>
-                                <th>Status</th>
-                                <th>ID Sector</th>
+                                <th>ID Banco</th>
+                                <th>Nombre banco</th>
+                                <th>Descripción</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
